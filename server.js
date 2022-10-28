@@ -34,6 +34,8 @@ app.use(express.json())
 app.use(cookieParser())
 // app.use( logger, express.json(), cookieParser())
 app.use('/', router)
+// use route user 
+app.use('/users',require('./routes/userRoutes'))
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {
