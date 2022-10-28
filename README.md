@@ -20,3 +20,4 @@
 18. [ ] Only Managers and Admins can access User Settings 
 19. [ ] Only Managers and Admins can create new users 
 20. [ ] Desktop mode is most important but should be available in mobile # Mern
+# mern
