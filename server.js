@@ -1,6 +1,10 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+// import connect db vs call connetDB fn ==> to connect to our data base
+const connectDB = require('./config/dbConnect')
+const mongoose = require("mongoose")
+connectDB()
 // use path 
 const path = require('path')
 // add PORT
@@ -10,7 +14,7 @@ const cookieParser = require('cookie-parser')
 // add router 
 const router = require('./routes/root')
 // import middleware
-const { logger } = require('./middleware/logger')
+const { logger, logEvents } = require('./middleware/logger')
 app.use(logger)
 // imoprt vs use cors ==> allow Cross-origin resource sharing (CORS) is a mechanism that allows restricted
 //  resources on a web page to be requested from another domain outside the domain from which the first resource was served.[1]
@@ -41,7 +45,16 @@ app.all('*', (req, res) => {
     }
 })
 app.use(errorHanlder)
+// open connection
+mongoose.connection.once('open', () => {
+    console.log('connect to mongoose db')
+    app.listen(PORT, () => {
+        console.log(`listening on ${PORT} ...`)
+    })
+})
+// check error on our connection
+mongoose.connection.on('error', err => {
+    console.log(err)
+    logEvents(`error : ${err.hostname}\t${err.code}\t${err.syscall}\t`, 'mongoErr.log')
 
-app.listen(PORT, () => {
-    console.log(`listening on ${PORT} ...`)
 })
