@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 // use path 
@@ -40,6 +41,7 @@ app.all('*', (req, res) => {
     }
 })
 app.use(errorHanlder)
+
 app.listen(PORT, () => {
     console.log(`listening on ${PORT} ...`)
 })
