@@ -23,6 +23,7 @@ const logEvents = async (message, logFileName) => {
         await fsPromise.appendFile(path.join(__dirname, '..', 'logs', logFileName)
             , logItem)
     } catch (err) {
+        
         console.log(err)
     }
 }
