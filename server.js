@@ -35,7 +35,7 @@ app.use(cookieParser())
 // app.use( logger, express.json(), cookieParser())
 app.use('/', router)
 // use route user 
-app.use('/users',require('./routes/userRoutes'))
+app.use('/users', require('./routes/userRoutes'))
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {
@@ -46,6 +46,7 @@ app.all('*', (req, res) => {
         res.type('txt').send('404 not found')
     }
 })
+
 app.use(errorHanlder)
 // open connection
 mongoose.connection.once('open', () => {
