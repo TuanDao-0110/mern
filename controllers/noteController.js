@@ -80,7 +80,7 @@ const updateNote = asyncHandler(async (req, res, next) => {
     }
     // check for duplicate 
     // we have to use lean to remove save option from Note Schema ==> to make sure that our note findbyId is work without any duplication
-    const duplicate = await Note.findOne({ title }).lean().exex()
+    const duplicate = await Note.findOne({ title }).lean().exec()
     // Allow renaming of the orgiginal note
     if (duplicate && duplicate._id.toString()) {
         return res.status(409).json({ msg: "Duplicate note title" })
