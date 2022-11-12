@@ -34,9 +34,9 @@ app.use(express.json())
 app.use(cookieParser())
 // app.use( logger, express.json(), cookieParser())
 app.use('/', router)
-// use route user 
+// use route user note auth
+app.use('/auth',require('./routes/authRoutes'))
 app.use('/users', require('./routes/userRoutes'))
-
 app.use('/notes',require('./routes/noteRoutes'))
 app.all('*', (req, res) => {
     res.status(404)
