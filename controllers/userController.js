@@ -27,7 +27,8 @@ const getAllUsers = asyncHandler(async (req, res, next) => {
 
 
 const createNewUser = asyncHandler(async (req, res, next) => {
-    const { username, password, roles } = req.body
+    const { userName: username, password, roles } = req.body
+    console.log('this step')
     // confirm data
     if (!username || !password || !Array.isArray(roles) || !roles.length) {
         return res.status(400).json({ msg: 'all fields are required' })
@@ -39,6 +40,7 @@ const createNewUser = asyncHandler(async (req, res, next) => {
     if (duplicate) {
         return res.status(409).json({ msg: 'duplicate user name' })
     }
+
     // hash password
     const hashedPWD = await bcrypt.hash(password, 10)
     // defined user object
@@ -46,9 +48,9 @@ const createNewUser = asyncHandler(async (req, res, next) => {
     // Create and store new user
     const user = await User.create(userObject)
     if (user) {
-        res.status(201).json({ msg: `New user ${username} created` })
+        return res.status(201).json({ msg: `New user ${username} created` })
     } else {
-        res.status(400).json({ msg: 'Invalid user data receive' })
+        return res.status(400).json({ msg: 'Invalid user data receive' })
     }
 })
 
