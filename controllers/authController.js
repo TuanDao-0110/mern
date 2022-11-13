@@ -25,7 +25,7 @@ const login = asyncHandler(async (req, res, next) => {
     if (!match) {
         return res.status(401).json({ msg: 'unauthorized' })
     }
-    // send access token
+    // send access token 
     const accessToken = jwt.sign(
         // 1st factor for token required ==> by object/string/number type
         {
