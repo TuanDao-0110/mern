@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../controllers/authController')
-
-
+const loginLimiter = require('../middleware/loginLimiter')
+const {login,logout,refresh} = require('../controllers/authController')
 router.route('/')
-    .post()
+    .post(loginLimiter,login)
 
 
 router.route('/refresh')
-    .get()
+    .get(refresh)
 
 router.route('/logout')
-    .post()
+    .post(logout)
 
 module.exports = router 
