@@ -37,7 +37,7 @@ const login = asyncHandler(async (req, res, next) => {
         // 2nd factor for token required ==> secret key
         process.env.ACCESS_TOKEN_SECRET,
         // 3rd option ==> 
-        { expiresIn: '10s' }
+        { expiresIn: '15m' }
     )
 
     const refeshToken = jwt.sign(
@@ -45,7 +45,7 @@ const login = asyncHandler(async (req, res, next) => {
             "username": foundUser.username
         },
         process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: '1d' }
+        { expiresIn: '7d' }
     )
     // create secure cookie with refesh token ==> this cookie will go along with response when send back to user. 
     res.cookie('jwt', refeshToken, {
@@ -93,7 +93,7 @@ const refresh = asyncHandler(async (req, res, next) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: '10s' }
+                { expiresIn: '15m' }
             )
             res.json({ accessToken })
         })
