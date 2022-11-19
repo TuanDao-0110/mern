@@ -1,0 +1,16 @@
+20221113	00:46:31	e4b83fc8-3a20-4442-a34f-922aecc84faf	PATCH	/notes	http://localhost:3000
+20221113	00:47:10	7d43ca9d-ff1b-4efe-acd7-9a773d37755c	PATCH	/notes	http://localhost:3000
+20221113	00:47:46	18c901dd-a673-4677-ac52-c5f200c5da67	PATCH	/notes	http://localhost:3000
+20221113	00:48:25	aec5e323-c407-43d1-9ca7-7732605ba5cb	PATCH	/notes	http://localhost:3000
+20221113	00:48:46	cb4363bd-f933-42dc-b975-e69aa4d0ffa0	PATCH	/notes	http://localhost:3000
+20221113	00:49:19	d285d2db-ebde-47d9-9e9b-1be688d9ae0c	PATCH	/notes	http://localhost:3000
+20221113	00:50:04	d3baa408-b522-4c10-b5da-8c54a6261b8f	PATCH	/notes	http://localhost:3000
+20221113	17:30:42	6fc69c7b-99ac-4258-88aa-a88ca826d288	GET	/users	undefined
+20221113	17:31:25	3bbe8f18-6fe1-43e3-a325-43aef9a833fc	GET	/users	undefined
+20221113	17:31:55	349aa545-3346-400f-ad33-ef1e128a5536	GET	/users	undefined
+20221113	17:32:59	4262e823-93c8-4531-b123-bdcb1a682320	GET	/users	undefined
+20221114	18:25:59	1c0714b9-4d53-417b-a589-544ffacde79d	OPTIONS	/auth	http://localhost:3001
+20221114	18:26:00	a43b259e-ab66-4aa9-8942-5218316be589	OPTIONS	/auth	http://localhost:3001
+20221115	10:46:16	8ea463fe-8e24-4eea-87c8-0fa7966d5474	OPTIONS	/auth	http://localhost:3001
+20221115	10:46:17	123bc476-cabd-4f18-9f22-f9f5ca90c136	OPTIONS	/auth	http://localhost:3001
+20221115	15:20:42	cbcc4325-697d-4066-92c1-8adedf20e6b4	GET	/users	http://localhost:3000
